@@ -1,8 +1,8 @@
-package chasqui.converters.gsm;
+package io.einharjar.chasqui.converters.gsm;
 
-import chasqui.converters.target.Country;
-import chasqui.converters.target.Language;
-import chasqui.converters.target.Region;
+import io.einharjar.chasqui.converters.target.Country;
+import io.einharjar.chasqui.converters.target.Language;
+import io.einharjar.chasqui.converters.target.Region;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +42,8 @@ public class TranslationTables {
         DUTCH_TABLE.put('Ý', "Y");
         DUTCH_TABLE.put('Ÿ', "Y");
         DUTCH_TABLE.put('Ĳ', "IJ");
+
+        //Special letters
         DUTCH_TABLE.put('„', "\"");
     }
 

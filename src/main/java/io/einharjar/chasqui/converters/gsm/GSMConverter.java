@@ -1,16 +1,19 @@
-package chasqui.converters.gsm;
+package io.einharjar.chasqui.converters.gsm;
 
-import chasqui.converters.target.Country;
-import chasqui.converters.target.Language;
-import chasqui.converters.PayloadConverter;
-import chasqui.converters.target.Region;
-import org.apache.commons.lang3.StringUtils;
+import io.einharjar.chasqui.converters.target.Country;
+import io.einharjar.chasqui.converters.target.Language;
+import io.einharjar.chasqui.converters.Converter;
+import io.einharjar.chasqui.converters.target.Region;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.Map;
 
-public class GSMConverter implements PayloadConverter {
+public class GSMConverter implements Converter {
 
-    public Map<Integer, Map<Character, String>> mergedTranslationMapCache;
+
+    public GSMConverter(){
+
+    }
 
     public String convert(String s, Language lang) {
         if(StringUtils.isBlank(s)){
