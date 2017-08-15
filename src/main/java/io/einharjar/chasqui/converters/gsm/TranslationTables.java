@@ -70,7 +70,7 @@ public class TranslationTables {
     }
 
 
-    //French
+    //German
     private static Map<Character, String> GERMAN_TABLE;
 
     static {
@@ -90,8 +90,8 @@ public class TranslationTables {
         GERMAN_TABLE.put('ú', "u");
 
         //capital
-        GERMAN_TABLE.put('Â',"A");
-        GERMAN_TABLE.put('Ó',"O");
+        GERMAN_TABLE.put('Â', "A");
+        GERMAN_TABLE.put('Ó', "O");
         GERMAN_TABLE.put('Ï', "I");
         GERMAN_TABLE.put('Ë', "E");
         GERMAN_TABLE.put('Ê', "E");

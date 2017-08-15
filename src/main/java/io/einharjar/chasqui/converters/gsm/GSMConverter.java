@@ -19,42 +19,21 @@ public class GSMConverter implements Converter {
         if(StringUtils.isBlank(s)){
             return s;
         }
-        if(lang == null){
-            throw new IllegalArgumentException("Language cannot be null");
-        }
-        Map<Character, String> translationMap = TranslationTables.LANGUAGE_TABLE.get(lang);
-        if(translationMap == null){
-            throw new IllegalArgumentException("Language does not have a corresponding translation table");
-        }
-        return convert(s, translationMap);
+        return convert(s, retrieveTranslationTable(lang));
     }
 
     public String convert(String s, Country country) {
         if(StringUtils.isBlank(s)){
             return s;
         }
-        if(country == null){
-            throw new IllegalArgumentException("Country cannot be null");
-        }
-        Map<Character, String> translationMap = TranslationTables.COUNTRY_TABLE.get(country);
-        if(translationMap == null){
-            throw new IllegalArgumentException("Country does not have a corresponding translation table");
-        }
-        return convert(s, translationMap);
+        return convert(s, retrieveTranslationTable(country));
     }
 
     public String convert(String s, Region region) {
         if(StringUtils.isBlank(s)){
             return s;
         }
-        if(region == null){
-            throw new IllegalArgumentException("Region cannot be null");
-        }
-        Map<Character, String> translationMap = TranslationTables.REGION_TABLE.get(region);
-        if(translationMap == null){
-            throw new IllegalArgumentException("Region does not have a corresponding translation table");
-        }
-        return convert(s, translationMap);
+        return convert(s, retrieveTranslationTable(region));
     }
 
     public String convert(String s){
@@ -77,4 +56,38 @@ public class GSMConverter implements Converter {
         }
         return translatedString.toString();
     }
+
+    private Map<Character,String> retrieveTranslationTable(Language lang){
+        if(lang == null){
+            throw new IllegalArgumentException("Language cannot be null");
+        }
+        Map<Character, String> translationMap = TranslationTables.LANGUAGE_TABLE.get(lang);
+        if(translationMap == null){
+            throw new IllegalArgumentException("Language does not have a corresponding translation table");
+        }
+        return translationMap;
+    }
+
+    private Map<Character,String> retrieveTranslationTable(Country country){
+        if(country == null){
+            throw new IllegalArgumentException("Country cannot be null");
+        }
+        Map<Character, String> translationMap = TranslationTables.COUNTRY_TABLE.get(country);
+        if(translationMap == null){
+            throw new IllegalArgumentException("Country does not have a corresponding translation table");
+        }
+        return translationMap;
+    }
+
+    private Map<Character,String> retrieveTranslationTable(Region region){
+        if(region == null){
+            throw new IllegalArgumentException("Region cannot be null");
+        }
+        Map<Character, String> translationMap = TranslationTables.REGION_TABLE.get(region);
+        if(translationMap == null){
+            throw new IllegalArgumentException("Region does not have a corresponding translation table");
+        }
+        return translationMap;
+    }
+
 }
