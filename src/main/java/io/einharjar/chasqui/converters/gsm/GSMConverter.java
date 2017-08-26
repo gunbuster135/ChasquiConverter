@@ -4,8 +4,6 @@ import io.einharjar.chasqui.converters.locale.Country;
 import io.einharjar.chasqui.converters.locale.Language;
 import io.einharjar.chasqui.converters.Converter;
 import io.einharjar.chasqui.converters.locale.Region;
-import io.einharjar.chasqui.converters.util.Helper;
-import org.apache.commons.lang.StringUtils;
 import java.util.Map;
 
 import static io.einharjar.chasqui.converters.util.Helper.*;
