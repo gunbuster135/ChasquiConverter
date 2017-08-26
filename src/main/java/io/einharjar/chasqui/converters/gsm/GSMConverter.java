@@ -4,6 +4,7 @@ import io.einharjar.chasqui.converters.locale.Country;
 import io.einharjar.chasqui.converters.locale.Language;
 import io.einharjar.chasqui.converters.Converter;
 import io.einharjar.chasqui.converters.locale.Region;
+import io.einharjar.chasqui.converters.util.Helper;
 import org.apache.commons.lang.StringUtils;
 import java.util.Map;
 
@@ -17,28 +18,28 @@ public class GSMConverter implements Converter {
     }
 
     public String convert(String s, Language lang) {
-        if(StringUtils.isBlank(s)){
+        if(isBlank(s)){
             return s;
         }
         return convert(s, retrieveTranslationTable(lang));
     }
 
     public String convert(String s, Country country) {
-        if(StringUtils.isBlank(s)){
+        if(isBlank(s)){
             return s;
         }
         return convert(s, retrieveTranslationTable(country));
     }
 
     public String convert(String s, Region region) {
-        if(StringUtils.isBlank(s)){
+        if(isBlank(s)){
             return s;
         }
         return convert(s, retrieveTranslationTable(region));
     }
 
     public String convert(String s){
-        if(StringUtils.isBlank(s)){
+        if(isBlank(s)){
             return s;
         }
         return convert(s, TranslationTables.MASTER_TABLE);
