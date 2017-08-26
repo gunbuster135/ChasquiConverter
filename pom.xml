@@ -7,6 +7,7 @@
     <groupId>io.einharjar</groupId>
     <artifactId>ChasquiConverter</artifactId>
     <version>1.0</version>
+    <packaging>jar</packaging>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
@@ -22,4 +23,11 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>bintray-gunbuster135-ChasquiConverter</id>
+            <name>gunbuster135-ChasquiConverter</name>
+            <url>https://api.bintray.com/maven/gunbuster135/ChasquiConverter/ChasquiConverter/;publish=1</url>
+        </repository>
+    </distributionManagement>
 </project>
