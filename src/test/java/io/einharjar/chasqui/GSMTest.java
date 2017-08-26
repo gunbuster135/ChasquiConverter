@@ -1,9 +1,9 @@
 package io.einharjar.chasqui;
 
 import io.einharjar.chasqui.converters.gsm.GSMConverter;
-import io.einharjar.chasqui.converters.target.Country;
-import io.einharjar.chasqui.converters.target.Language;
-import io.einharjar.chasqui.converters.target.Region;
+import io.einharjar.chasqui.converters.locale.Country;
+import io.einharjar.chasqui.converters.locale.Language;
+import io.einharjar.chasqui.converters.locale.Region;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
