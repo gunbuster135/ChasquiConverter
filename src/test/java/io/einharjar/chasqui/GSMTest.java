@@ -94,13 +94,23 @@ public class GSMTest {
     public void testNullArguments(){
         gsmConverter.convert("hello", (Country) null);
     }
-    @Test()
+
+    @Test
     public void testSimpleStrings(){
         Assert.assertEquals(gsmConverter.convert("hello", Region.Benelux), "hello");
         Assert.assertEquals(gsmConverter.convert(" force  t h e reckoning", Region.Benelux), " force  t h e reckoning");
         Assert.assertEquals(gsmConverter.convert(" "), " ");
         Assert.assertEquals(gsmConverter.convert(" {{{8aeae "), " {{{8aeae ");
         Assert.assertEquals(gsmConverter.convert(null), null);
+    }
+
+    @Test
+    public void testNonexistentCharacters(){
+        Assert.assertEquals(gsmConverter.convert("HĞĞĞG"), "HG");
+    }
+    @Test
+    public void testMaintainWhitespace(){
+        Assert.assertEquals(gsmConverter.convert("H GĞĞĞ G"), "H G G");
     }
 
 }
